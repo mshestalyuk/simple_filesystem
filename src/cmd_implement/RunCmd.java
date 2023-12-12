@@ -7,8 +7,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CommandExecutionService {
-    private Map<String, CommandLineCommand> commands= new HashMap<>(){{
+public class RunCmd {
+    private Map<String, Cmd> commands= new HashMap<>(){{
         put("ls", new CmdLs());
         put("exit", new CmdExit());
         put("mkdir", new CmdMkDir());

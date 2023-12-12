@@ -2,9 +2,9 @@ package cmd_implement.cmd;
 
 import FileSys.CurrentState;
 import FileSys.Directory;
-import cmd_implement.CommandLineCommand;
+import cmd_implement.Cmd;
 
-public class CmdRmDir implements CommandLineCommand {
+public class CmdRmDir implements Cmd {
     @Override
     public CurrentState execute(CurrentState currentState, String[] args) {
         if (args.length == 0) {

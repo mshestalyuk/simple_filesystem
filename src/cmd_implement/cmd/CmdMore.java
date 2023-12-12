@@ -4,12 +4,12 @@ import static cmd_implement.Util.getNameStartPosition;
 
 import FileSys.CurrentState;
 import FileSys.Directory;
-import cmd_implement.CommandLineCommand;
+import cmd_implement.Cmd;
 import cmd_implement.Util;
 import cmd_implement.exc.DoesNotExistException;
 import cmd_implement.exc.InvalidPathException;
 
-public class CmdMore implements CommandLineCommand {
+public class CmdMore implements Cmd {
     @Override
     public CurrentState execute(CurrentState currentState, String[] args) {
         Directory from;

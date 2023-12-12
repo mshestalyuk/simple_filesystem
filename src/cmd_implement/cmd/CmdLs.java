@@ -1,12 +1,12 @@
 package cmd_implement.cmd;
 
 import FileSys.CurrentState;
-import cmd_implement.CommandLineCommand;
+import cmd_implement.Cmd;
 
 import java.util.LinkedList;
 import java.util.List;
 
-public class CmdLs implements CommandLineCommand {
+public class CmdLs implements Cmd {
 
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_PURPLE = "\u001B[35m";

@@ -4,13 +4,13 @@ import FileSys.CurrentState;
 import FileSys.Directory;
 import FileSys.File;
 import FileSys.Path;
-import cmd_implement.CommandLineCommand;
+import cmd_implement.Cmd;
 import cmd_implement.Util;
 import cmd_implement.exc.DoesNotExistException;
 import cmd_implement.exc.InvalidPathException;
 import cmd_implement.exc.NameExistsException;
 
-public class CmdCp implements CommandLineCommand {
+public class CmdCp implements Cmd {
     @Override
     public CurrentState execute(CurrentState currentState, String[] args) {
         // Check for sufficient arguments

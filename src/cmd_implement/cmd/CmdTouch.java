@@ -4,9 +4,9 @@ import FileSys.CurrentState;
 import FileSys.Directory;
 import FileSys.File;
 import FileSys.Path;
-import cmd_implement.CommandLineCommand;
+import cmd_implement.Cmd;
 
-public class CmdTouch implements CommandLineCommand {
+public class CmdTouch implements Cmd {
     @Override
     public CurrentState execute(CurrentState currentState, String[] args) {
         if (args.length == 0) {

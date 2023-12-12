@@ -1,7 +1,6 @@
 
 import FileSys.CurrentState;
-import cmd_implement.CommandExecutionService;
-
+import cmd_implement.RunCmd;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -17,7 +16,7 @@ public class UserInterface {
         currentState.getCurrentDirectory().getDirectories().get("docs").addFile("file1");
         currentState.getCurrentDirectory().getDirectories().get("docs").addFile("file2");
         
-        CommandExecutionService ces = new CommandExecutionService();
+        RunCmd ces = new RunCmd();
         try (Scanner scanner = new Scanner(System.in)) {
             while (true){
                 System.out.print(username+ "@" + machineName + ":" + currentState.getCurrentDirectory().getPath() + "$ ");

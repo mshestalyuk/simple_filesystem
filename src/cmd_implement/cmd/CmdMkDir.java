@@ -2,11 +2,11 @@ package cmd_implement.cmd;
 
 import FileSys.CurrentState;
 import FileSys.Directory;
-import cmd_implement.CommandLineCommand;
+import cmd_implement.Cmd;
 import cmd_implement.Util;
 import cmd_implement.exc.InvalidPathException;
 
-public class CmdMkDir implements CommandLineCommand {
+public class CmdMkDir implements Cmd {
     @Override
     public CurrentState execute(CurrentState currentState, String[] args) {
         int nameBeginsAt = 0;
