@@ -4,11 +4,11 @@ import static cmd_implement.Util.getNameStartPosition;
 
 import FileSys.CurrentState;
 import FileSys.Directory;
+import FileSys.exc.DoesNotExistException;
+import FileSys.exc.InvalidPathException;
+import FileSys.exc.NameExistsException;
 import cmd_implement.Cmd;
 import cmd_implement.Util;
-import cmd_implement.exc.DoesNotExistException;
-import cmd_implement.exc.InvalidPathException;
-import cmd_implement.exc.NameExistsException;
 
 public class CmdMv implements Cmd {
     @Override

@@ -2,9 +2,9 @@ package cmd_implement.cmd;
 
 import FileSys.CurrentState;
 import FileSys.Directory;
+import FileSys.exc.InvalidPathException;
 import cmd_implement.Cmd;
 import cmd_implement.Util;
-import cmd_implement.exc.InvalidPathException;
 
 public class CmdCd implements Cmd {
     @Override

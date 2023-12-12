@@ -2,7 +2,7 @@ package cmd_implement;
 
 import FileSys.CurrentState;
 import FileSys.Directory;
-import cmd_implement.exc.InvalidPathException;
+import FileSys.exc.InvalidPathException;
 
 public class Util {
 
