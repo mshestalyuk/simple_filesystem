@@ -9,16 +9,16 @@ import java.util.Map;
 
 public class CommandExecutionService {
     private Map<String, CommandLineCommand> commands= new HashMap<>(){{
-        put("ls", new CommandLs());
-        put("exit", new CommandExit());
-        put("mkdir", new CommandMkDir());
-        put("cd", new CommandCd());
-        put("cp", new CommandCp());
-        put("more", new CommandMore());
-        put("mv", new CommandMv());
-        put("rm", new CommandRm());
-        put("rmdir", new CommandRmDir());
-        put("touch", new CommandTouch());
+        put("ls", new CmdLs());
+        put("exit", new CmdExit());
+        put("mkdir", new CmdMkDir());
+        put("cd", new CmdCd());
+        put("cp", new CmdCp());
+        put("more", new CmdMore());
+        put("mv", new CmdMv());
+        put("rm", new CmdRm());
+        put("rmdir", new CmdRmDir());
+        put("touch", new CmdTouch());
 
     }};
 

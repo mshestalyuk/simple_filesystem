@@ -6,7 +6,7 @@ import cmd_implement.CommandLineCommand;
 import cmd_implement.Util;
 import cmd_implement.exc.InvalidPathException;
 
-public class CommandCd implements CommandLineCommand {
+public class CmdCd implements CommandLineCommand {
     @Override
     public CurrentState execute(CurrentState currentState, String[] args) {
         Directory tmpCurrentDirectory = currentState.getCurrentDirectory();
@@ -34,7 +34,7 @@ public class CommandCd implements CommandLineCommand {
 
         try {
             // Otherwise, attempt to set the current directory based on the provided path
-            currentState.setCurrentDirectory(Util.getEndOfThePathDirectory(currentState, args[0]));
+            currentState.setCurrentDirectory(Util.resolveDirectoryPath(currentState, args[0]));
         } catch (InvalidPathException e) {
             System.out.println(e.getMessage());
         }

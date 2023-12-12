@@ -6,7 +6,7 @@ import cmd_implement.CommandLineCommand;
 import cmd_implement.Util;
 import cmd_implement.exc.InvalidPathException;
 
-public class CommandMkDir implements CommandLineCommand {
+public class CmdMkDir implements CommandLineCommand {
     @Override
     public CurrentState execute(CurrentState currentState, String[] args) {
         int nameBeginsAt = 0;
@@ -18,7 +18,7 @@ public class CommandMkDir implements CommandLineCommand {
         }
         if(nameBeginsAt > 0){
             try {
-            Directory finalParentDir = Util.getEndOfThePathDirectory(currentState, args[0].substring(0, nameBeginsAt));
+            Directory finalParentDir = Util.resolveDirectoryPath(currentState, args[0].substring(0, nameBeginsAt));
             finalParentDir.addDirectory(args[0].substring(nameBeginsAt));
             }catch (InvalidPathException e){
                 System.out.println(e.getMessage());

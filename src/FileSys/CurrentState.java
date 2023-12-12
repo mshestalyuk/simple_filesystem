@@ -2,27 +2,27 @@ package FileSys;
 
 
 public class CurrentState {
-    private Directory rootDirectory;
-    private Directory currentDirectory;
+    private Directory root;
+    private Directory currentDir;
 
     public CurrentState() {
-        this.rootDirectory = new Directory(new Path());
-        this.currentDirectory =  rootDirectory;
+        this.root = new Directory(new Path());
+        this.currentDir =  root;
     }
 
     public Directory getRootDirectory() {
-        return rootDirectory;
+        return root;
     }
 
-    public void setRootDirectory(Directory rootDirectory) {
-        this.rootDirectory = rootDirectory;
+    public void setRootDirectory(Directory root) {
+        this.root = root;
     }
 
     public Directory getCurrentDirectory() {
-        return currentDirectory;
+        return currentDir;
     }
 
-    public void setCurrentDirectory(Directory currentDirectory) {
-        this.currentDirectory = currentDirectory;
+    public void setCurrentDirectory(Directory currentDir) {
+        this.currentDir = currentDir;
     }
 }

@@ -10,7 +10,7 @@ import cmd_implement.exc.DoesNotExistException;
 import cmd_implement.exc.InvalidPathException;
 import cmd_implement.exc.NameExistsException;
 
-public class CommandCp implements CommandLineCommand {
+public class CmdCp implements CommandLineCommand {
     @Override
     public CurrentState execute(CurrentState currentState, String[] args) {
         // Check for sufficient arguments

@@ -9,14 +9,14 @@ import cmd_implement.Util;
 import cmd_implement.exc.DoesNotExistException;
 import cmd_implement.exc.InvalidPathException;
 
-public class CommandMore implements CommandLineCommand {
+public class CmdMore implements CommandLineCommand {
     @Override
     public CurrentState execute(CurrentState currentState, String[] args) {
         Directory from;
         try {
             int nameBeginsAt = getNameStartPosition(args[0]);
             if (nameBeginsAt > 0) {
-                from = Util.getEndOfThePathDirectory(currentState, args[0].substring(0, nameBeginsAt));
+                from = Util.resolveDirectoryPath(currentState, args[0].substring(0, nameBeginsAt));
             } else {
                 from = currentState.getCurrentDirectory();
             }

@@ -4,7 +4,7 @@ import FileSys.CurrentState;
 import FileSys.Directory;
 import cmd_implement.CommandLineCommand;
 
-public class CommandRmDir implements CommandLineCommand {
+public class CmdRmDir implements CommandLineCommand {
     @Override
     public CurrentState execute(CurrentState currentState, String[] args) {
         if (args.length == 0) {
@@ -18,7 +18,6 @@ public class CommandRmDir implements CommandLineCommand {
         if (currentDirectory.getDirectories().containsKey(directoryName)) {
             Directory directoryToRemove = currentDirectory.getDirectories().get(directoryName);
 
-            // Check if the directory to remove is not the parent directory
             if (directoryToRemove != currentDirectory.getParentDirectory()) {
                 currentDirectory.getDirectories().remove(directoryName);
             } else {
