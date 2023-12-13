@@ -4,7 +4,7 @@ import cmd_implement.RunCmd;
 import java.util.Scanner;
 
 public class UserInterface {
-    public void run() {
+    public static void main(String[] args) {
         String command;
         String username = "user";
         String machineName = "server";

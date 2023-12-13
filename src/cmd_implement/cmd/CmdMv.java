@@ -12,7 +12,7 @@ import cmd_implement.Util;
 
 public class CmdMv implements Cmd {
     @Override
-    public CurrentState execute(CurrentState currentState, String[] args) {
+    public CurrentState exec(CurrentState currentState, String[] args) {
         try {
             Directory[] fromAndTo = Util.getFromAndToDirectories(currentState, args);
             move(args[0].substring(getNameStartPosition(args[0])), fromAndTo[0], fromAndTo[1]);

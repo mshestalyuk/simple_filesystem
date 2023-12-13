@@ -8,7 +8,7 @@ import cmd_implement.Cmd;
 
 public class CmdTouch implements Cmd {
     @Override
-    public CurrentState execute(CurrentState currentState, String[] args) {
+    public CurrentState exec(CurrentState currentState, String[] args) {
         if (args.length == 0) {
             System.out.println("Usage: touch <file_name>");
             return currentState;

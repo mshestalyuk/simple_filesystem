@@ -7,10 +7,10 @@ import FileSys.exc.InvalidPathException;
 public class Util {
 
     public static Directory resolveDirectoryPath(CurrentState currentState, String path) throws InvalidPathException {
-        boolean isAbsolutePath = path.startsWith("/");
-        String[] pathComponents = isAbsolutePath ? path.substring(1).split("/") : path.split("/");
+        boolean isRootPath = path.startsWith("/");
+        String[] pathComponents = isRootPath ? path.substring(1).split("/") : path.split("/");
 
-        Directory directory = isAbsolutePath ? currentState.getRootDirectory() : currentState.getCurrentDirectory();
+        Directory directory = isRootPath ? currentState.getRootDirectory() : currentState.getCurrentDirectory();
 
         for (int i = 0; i < pathComponents.length - 1; i++) {
             directory = navigateToNextDirectory(directory, pathComponents[i], path);

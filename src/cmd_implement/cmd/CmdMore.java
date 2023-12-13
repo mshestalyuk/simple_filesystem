@@ -11,7 +11,7 @@ import cmd_implement.Util;
 
 public class CmdMore implements Cmd {
     @Override
-    public CurrentState execute(CurrentState currentState, String[] args) {
+    public CurrentState exec(CurrentState currentState, String[] args) {
         Directory from;
         try {
             int nameBeginsAt = getNameStartPosition(args[0]);

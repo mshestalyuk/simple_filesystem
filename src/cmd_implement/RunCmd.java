@@ -28,7 +28,7 @@ public class RunCmd {
 
         if(commands.containsKey(args[0])){
             try {
-                commands.get(args[0]).execute(currentState, Arrays.copyOfRange(args, 1, args.length));
+                commands.get(args[0]).exec(currentState, Arrays.copyOfRange(args, 1, args.length));
             }catch (IndexOutOfBoundsException e){
                 System.out.println("Invalid parameters number");
                 e.printStackTrace();

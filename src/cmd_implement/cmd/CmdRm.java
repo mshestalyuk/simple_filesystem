@@ -6,7 +6,7 @@ import cmd_implement.Cmd;
 
 public class CmdRm implements Cmd {
     @Override
-    public CurrentState execute(CurrentState currentState, String[] args) {
+    public CurrentState exec(CurrentState currentState, String[] args) {
         if (args.length == 0) {
             System.out.println("Usage: rm <file_name>");
             return currentState;

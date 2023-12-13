@@ -12,7 +12,7 @@ public class CmdLs implements Cmd {
     public static final String ANSI_PURPLE = "\u001B[35m";
 
     @Override
-    public CurrentState execute(CurrentState currentState, String[] args) {
+    public CurrentState exec(CurrentState currentState, String[] args) {
         List<String> outputList = new LinkedList<>();
         outputList.addAll(
                 currentState.getCurrentDirectory().getDirectories().values()
