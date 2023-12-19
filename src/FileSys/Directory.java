@@ -19,6 +19,14 @@ public class Directory {
         this.parentDirectory = parentDirectory;
     }
 
+
+    
+    public void addFile(String fileName){
+        File f2 = new File(new Path(path, fileName));
+        f2.setContent(generateRandomString(10)); // Example: 10 character long random string
+        files.put(fileName, f2);
+    }
+
     public void addDirectory(String dirName) {
         if (directories.containsKey(dirName)) {
             System.out.println("Directory already exists");
@@ -27,13 +35,6 @@ public class Directory {
             directories.put(dirName, newDirectory);
         }
     }
-    
-    public void addFile(String fileName){
-        File f2 = new File(new Path(path, fileName));
-        f2.setContent(generateRandomString(10)); // Example: 10 character long random string
-        files.put(fileName, f2);
-    }
-
 
     @Override
     public String toString() {
@@ -43,6 +44,7 @@ public class Directory {
     public String getPath() {
         return path.toString();
     }
+
     public Path getPathNotString() {
         return path;
     }
@@ -69,6 +71,7 @@ public class Directory {
         this.parentDirectory = parentDirectory;
     }
 
+    // function that generate random string and add it to file content
     private String generateRandomString(int length) {
         String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         StringBuilder result = new StringBuilder();

@@ -8,9 +8,19 @@ public class Util {
 
     public static Directory resolveDirectoryPath(CurrentState currentState, String path) throws InvalidPathException {
         boolean isRootPath = path.startsWith("/");
-        String[] pathComponents = isRootPath ? path.substring(1).split("/") : path.split("/");
-
-        Directory directory = isRootPath ? currentState.getRootDirectory() : currentState.getCurrentDirectory();
+        String[] pathComponents;
+        Directory directory;
+        if (isRootPath) {
+            pathComponents = path.substring(1).split("/");
+        } else {
+            pathComponents = path.split("/");
+        }
+        if (isRootPath) {
+            directory = currentState.getRootDirectory();
+        } else {
+            directory = currentState.getCurrentDirectory();
+        }
+        
 
         for (int i = 0; i < pathComponents.length - 1; i++) {
             directory = navigateToNextDirectory(directory, pathComponents[i], path);
@@ -38,8 +48,13 @@ public class Util {
 
     public static Directory[] getFromAndToDirectories(CurrentState currentState, String[] paths) throws InvalidPathException {
         int nameStartIndex = getNameStartPosition(paths[0]);
-        Directory from = (nameStartIndex > 0) ? resolveDirectoryPath(currentState, paths[0].substring(0, nameStartIndex))
-                                              : currentState.getCurrentDirectory();
+        Directory from;
+        if (nameStartIndex > 0) {
+            from = resolveDirectoryPath(currentState, paths[0].substring(0, nameStartIndex));
+        } else {
+            from = currentState.getCurrentDirectory();
+        }
+        
         Directory to = resolveDirectoryPath(currentState, paths[1]);
 
         return new Directory[]{from, to};
@@ -47,11 +62,19 @@ public class Util {
 
     public static int getNameStartPosition(String path) {
         int lastIndex = path.lastIndexOf('/');
-        return lastIndex == -1 ? 0 : lastIndex + 1;
+        if (lastIndex == -1) {
+            return 0;
+        } else {
+            return (lastIndex + 1);
+        }
     }
 
     private static String getLastPathComponent(String path) {
         int lastIndex = path.lastIndexOf('/');
-        return lastIndex == -1 ? path : path.substring(lastIndex + 1);
-    }
+        if (lastIndex == -1) {
+            return path;
+        } else {
+            return path.substring(lastIndex + 1);
+        }
+     }
 }

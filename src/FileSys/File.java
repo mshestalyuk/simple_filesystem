@@ -2,7 +2,7 @@ package FileSys;
 
 public class File {
     private Path path;
-    private String name;
+    private String filename;
     private String content;
 
     public File(Path path) {
@@ -18,22 +18,21 @@ public class File {
         return path;
     }
 
-    public void setPath(Path path) {
-        this.path = path;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public String getFileName() {
+        return filename;
     }
 
     public String getContent() {
         return content;
     }
 
+    public void setPath(Path path) {
+        this.path = path;
+    }
+
+    public void setFileName(String filename) {
+        this.filename = filename;
+    }
     public void setContent(String content) {
         this.content = content;
     }

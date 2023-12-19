@@ -10,19 +10,23 @@ public class CurrentState {
         this.currentDir =  root;
     }
 
-    public Directory getRootDirectory() {
-        return root;
-    }
-
     public void setRootDirectory(Directory root) {
         this.root = root;
-    }
-
-    public Directory getCurrentDirectory() {
-        return currentDir;
     }
 
     public void setCurrentDirectory(Directory currentDir) {
         this.currentDir = currentDir;
     }
+    
+    public Directory getRootDirectory() {
+        return root;
+    }
+
+
+
+    public Directory getCurrentDirectory() {
+        return currentDir;
+    }
+
+
 }
