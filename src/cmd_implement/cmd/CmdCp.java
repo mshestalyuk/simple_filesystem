@@ -4,10 +4,10 @@ import FileSys.CurrentState;
 import FileSys.Directory;
 import FileSys.File;
 import FileSys.Path;
-import FileSys.exc.DoesNotExistException;
+import FileSys.exc.DoNotExistException;
 import FileSys.exc.InsufficentArguments;
 import FileSys.exc.InvalidPathException;
-import FileSys.exc.NameExistsException;
+import FileSys.exc.NameAlreadyExistsException;
 import cmd_implement.Cmd;
 import cmd_implement.Util;
 
@@ -24,7 +24,7 @@ public class CmdCp implements Cmd {
             Directory[] fromAndTo = Util.getFromAndToDirectories(currentState, args);
             String targetFileName = args[1].substring(Util.getNameStartPosition(args[1]));
             copy(args[0].substring(Util.getNameStartPosition(args[0])), fromAndTo[0], fromAndTo[1], targetFileName);
-        } catch (InvalidPathException | NameExistsException | InsufficentArguments e) {
+        } catch (InvalidPathException | NameAlreadyExistsException | InsufficentArguments e) {
             System.out.println(e.getMessage());
         }
         return currentState;
@@ -41,7 +41,7 @@ public class CmdCp implements Cmd {
             Directory newDirectory = new Directory(new Path(to.getPathNotString(), name), to);
             to.getDirectories().put(name, newDirectory);
         } else {
-            throw new DoesNotExistException("No such file or directory :" + name);
+            throw new DoNotExistException("No such file or directory :" + name);
         }
     }
 }

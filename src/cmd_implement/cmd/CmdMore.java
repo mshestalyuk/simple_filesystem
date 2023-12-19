@@ -4,7 +4,7 @@ import static cmd_implement.Util.getNameStartPosition;
 
 import FileSys.CurrentState;
 import FileSys.Directory;
-import FileSys.exc.DoesNotExistException;
+import FileSys.exc.DoNotExistException;
 import FileSys.exc.InvalidPathException;
 import cmd_implement.Cmd;
 import cmd_implement.Util;
@@ -24,8 +24,8 @@ public class CmdMore implements Cmd {
             if(from.getFiles().containsKey(name)){
                 System.out.println(from.getFiles().get(name).getContent());
             }
-            else throw new DoesNotExistException("File with name \"" + name + "\" does not exist");
-        } catch (InvalidPathException | DoesNotExistException e ) {
+            else throw new DoNotExistException("File with name \"" + name + "\" does not exist");
+        } catch (InvalidPathException | DoNotExistException e ) {
             System.out.println(e.getMessage());
         }
         return currentState;

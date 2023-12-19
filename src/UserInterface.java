@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class UserInterface {
     public static void main(String[] args) {
-        String command;
+        String cmd;
         String username = "user";
         String machineName = "server";
         CurrentState currentState = new CurrentState();
@@ -16,12 +16,12 @@ public class UserInterface {
         currentState.getCurrentDirectory().getDirectories().get("docs").addFile("file1");
         currentState.getCurrentDirectory().getDirectories().get("docs").addFile("file2");
         
-        RunCmd ces = new RunCmd();
+        RunCmd rcmd = new RunCmd();
         try (Scanner scanner = new Scanner(System.in)) {
             while (true){
                 System.out.print(username+ "@" + machineName + ":" + currentState.getCurrentDirectory().getPath() + "$ ");
-                command = scanner.nextLine();
-                ces.executeCommand(currentState, command);
+                cmd = scanner.nextLine();
+                rcmd.executeCommand(currentState, cmd);
             }
         }
     }

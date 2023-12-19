@@ -21,6 +21,10 @@ public class CmdCd implements Cmd {
             return currentState;
         }
 
+        if (args[0].equals(".")) {
+            return currentState;
+        }
+
         if (args[0].equals("..")) {
             Directory parentDirectory = tmpCurrentDirectory.getParentDirectory();
             if (parentDirectory != null) {
